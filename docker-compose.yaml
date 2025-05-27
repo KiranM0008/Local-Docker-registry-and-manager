@@ -1,0 +1,14 @@
+---
+version: '3'
+
+services:
+        docker-registry:
+                image: registry:2
+                container_name: docker-registry
+                ports:
+                        - 5000:5000
+                restart: always
+                volumes:
+                        - ./volume:/var/lib/registry
+                environment:
+                        REGISTRY_STORAGE_DELETE_ENABLED: true
